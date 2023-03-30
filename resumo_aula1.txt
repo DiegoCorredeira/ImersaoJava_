@@ -1,0 +1,54 @@
+O que é HTTP?
+    Http é o protocolo de transferencia que possibilita comunicação na web.{https -> Padrão de segurança }
+        HTTP = HyperText Transfer Protocol.
+O que é URI?
+    (Uniform Resource Identifier, ou Identificador Uniforme de Recursos);
+    É uma string que se refere a um recurso, algo generico, sendo a mais comum a URL.
+O que é JSON?
+    JSON - JavaScript Object Notation
+    É uma forma de anotação dee objetos JS de modo que eles
+    possam ser representados de forma comum a diversas linguagens.
+    Um JSON deve conter apenas informações que possam ser representadas em formato de texto. Listei algumas regras:
+
+        Não pode ter funções;
+        Não pode ter comentários;
+        Todo texto sempre tem aspas duplas;
+        As propriedades sempre tem aspas duplas.
+    Exemplo:
+        {
+           "cliente": {
+               "id": 2020,
+               "nome": "Maria Aparecida"
+           },
+           "pagamentos": [
+               {
+                   "id": 123,
+                   "descricacao": "Compra do livro Cangaceiro JavaScript",
+                   "valor": 50.5
+               },
+               {
+                   "id": 124,
+                   "descricacao": "Mensalidade escolar",
+                   "valor": 1500
+               }
+           ]
+        }
+Vocabulário:
+    Parse/Parsing (parsear) = 'Transformar' do tipo A para o tipo B.
+        Exemplo: Transformar uma string em JSON ou vice versa.
+
+Sintaxe:
+    - No final de cada linha, deve-se usar ponto e virgula, como em PHP.
+    - Para importarmos uma biblioteca, devemos começar com "import nomedabiblioteca"
+    - Deve-se definir previamente o tipo da variavel "var nome = 'Diego';"
+    - Pensando em legibilidade, é melhor deixar o TIPO da variavel. "String nome = 'Diego';"
+    - Em java não tem o foreach, o for each é apenas um template.
+        for (variavel){
+            faça algo
+        }
+
+DESAFIOS DA PRIMEIRA AULA:
+     - Acessar outro serviço do MDB.
+     - Melhorar a saída do codigo acima.
+     - Adicionar as estrelinhas de acordo com as notas do filme
+     - Remover a API do codigo externo.
