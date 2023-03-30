@@ -5,16 +5,14 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.util.List;
 import java.util.Map;
-
-import org.fusesource.jansi.Ansi;
-import org.fusesource.jansi.AnsiConsole;
-
-
+// Este bloco de código importa as classes necessárias para trabalhar com conexão HTTP, manipulação de JSON e coleções.
 
 public class App {
     public static void main(String[] args) throws Exception {
-        AnsiConsole.systemInstall();
         // Conexão HTTP
+        // Esta é a parte principal do código, onde uma conexão HTTP é estabelecida usando a classe HttpClient
+        // e uma solicitação GET é enviada para a URL especificada no String urlString. 
+        // O corpo da resposta é armazenado como uma String na variável body.
         String urlString = "https://raw.githubusercontent.com/alura-cursos/imersao-java-2-api/main/TopMovies.json";
         URI enderecamentoURL = URI.create(urlString);
         HttpClient client = HttpClient.newHttpClient();
@@ -22,25 +20,21 @@ public class App {
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
 
         String body = response.body();
-
+        // Nesta linha, a biblioteca Json é usada para analisar a String JSON na variável body em uma lista de filmes.
+        // Cada filme é representado por um Map<String,String> que armazena o título, classificação e imagem do filme.
         JsonParser parser = new JsonParser();
         List<Map<String, String>> filmeList = parser.parse(body);
         
         // Para cada item dentro da lista de filmes
+        // Este bloco de código itera por cada filme na lista e exibe o título, classificação e imagem na saída padrão.
         for (Map<String,String> filme : filmeList) {
-            System.out.println(Ansi.ansi().bgBrightMagenta().a(filme.get("title")).reset());
-            System.out.println("Nota: " + filme.get("imDbRating") + " " +  imprimirEstrelas(Double.parseDouble(filme.get("imDbRating"))));
+            System.out.println(filme.get("title"));
+            System.out.println(filme.get("imDbRating"));
             System.out.println(filme.get("image"));
             System.out.println();
             
         }
 
-    }
-    private static String imprimirEstrelas(double nota) {
-        int numEstrelas = (int) Math.round(nota);
-        StringBuilder sb = new StringBuilder();
-        sb.append("★".repeat(Math.max(0, numEstrelas)));
-        return sb.toString();
     }
 }
 

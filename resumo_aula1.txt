@@ -48,7 +48,7 @@ Sintaxe:
         }
 
 DESAFIOS DA PRIMEIRA AULA:
-     - Acessar outro serviço do MDB.
-     - Melhorar a saída do codigo acima.
-     - Adicionar as estrelinhas de acordo com as notas do filme
+     - Acessar outro serviço do MDB. - Fora do ar
+     - Melhorar a saída do codigo acima. - OK
+     - Adicionar as estrelinhas de acordo com as notas do filme - OK
      - Remover a API do codigo externo.
